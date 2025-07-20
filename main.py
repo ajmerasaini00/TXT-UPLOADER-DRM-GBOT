@@ -47,7 +47,7 @@ bot = Client(
     bot_token=BOT_TOKEN
 )
 
-AUTH_USER = os.environ.get('AUTH_USERS', '5680454765').split(',')
+AUTH_USER = os.environ.get('AUTH_USERS', '5504996957').split(',')
 AUTH_USERS = [int(user_id) for user_id in AUTH_USER]
 if int(OWNER) not in AUTH_USERS:
     AUTH_USERS.append(int(OWNER))
@@ -70,22 +70,23 @@ photozip = 'https://envs.sh/cD_.jpg'
 
 
 # Inline keyboard for start command
-BUTTONSCONTACT = InlineKeyboardMarkup([[InlineKeyboardButton(text="📞 Contact", url="https://t.me/saini_contact_bot")]])
+BUTTONSCONTACT = InlineKeyboardMarkup([[InlineKeyboardButton(text="Free Batch", url="https://t.me/addlist/SPPVMsegFMNkMDM1")]])
 keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton(text="🛠️ Help", url="https://t.me/+3k-1zcJxINYwNGZl"), InlineKeyboardButton(text="🛠️ Repo", url="https://github.com/cyberseller999/saini-txt-direct")],
+        [InlineKeyboardButton(text="Help 🐉", url="https://t.me/GUL5H4N"), InlineKeyboardButton(text="OWNER🖤", url="https://t.me/GUL5H4N")],
 ])
 
 # Image URLs for the random image feature
 image_urls = [
-    "https://tinypic.host/images/2025/02/07/IMG_20250207_224444_975.jpg",
-    "https://tinypic.host/images/2025/02/07/DeWatermark.ai_1738952933236-1.png",
+    "https://tinypic.host/image/3SSkb",
+    "https://tinypic.host/image/3S8x5", 
+    "https://tinypic.host/image/3SfAE",
     # Add more image URLs as needed
 ]
 
 @bot.on_message(filters.command("addauth") & filters.private)
 async def add_auth_user(client: Client, message: Message):
     if message.chat.id != OWNER:
-        return await message.reply_text("**This command only for bot Owner**")
+        return await message.reply_text("**🖕🏻 Sit Down Nig*g@ This command is only for Bot Father...Bro tryna pull admin moves with side character energy😭🥀 u are not the main character lil bro🥀**")
     
     try:
         new_user_id = int(message.command[1])
@@ -548,9 +549,9 @@ async def txt_handler(bot: Client, m: Message):
     if m.chat.id not in AUTH_USERS and m.chat.id not in CHANNELS_LIST:
         print(f"User ID not in AUTH_USERS", m.chat.id)
         print(f"Channel ID not in CHANNELS_LIST", m.chat.id)
-        await m.reply_text(f"<blockquote>__**Oopss! You are not a Premium member** __\n__**PLEASE /upgrade YOUR PLAN**__\n__**Send me your user id for authorization**__\n__**Your User id**__ - `{m.chat.id}`</blockquote>\n")
+        await m.reply_text(f"<blockquote>__**Oopss! You are not a Premium User🤡** __\n__**PLEASE /upgrade YOUR PLAN Contact @GUL5H4N🖤**__\n__**Send me your user id for authorization**__\n__**Your User id**__ - `{m.chat.id}`</blockquote>\n")
         return
-    editable = await m.reply_text(f"**🔹Hi I am Poweful TXT Downloader📥 Bot.\n🔹Send me the txt file and wait.\n\n<blockquote><b>𝗡𝗼𝘁𝗲:\nAll input must be given in 20 sec</b></blockquote>**")
+    editable = await m.reply_text(f"**🔹Hi I am Poweful TXT Downloader📥 Bot🐉.\n🔹Send me the txt file and wait.\n\n<blockquote><b>𝗡𝗼𝘁𝗲:\nAll input must be given in 20 sec</b></blockquote>**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await bot.send_document(OWNER, x)
